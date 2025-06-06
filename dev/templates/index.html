@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tripmate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="text-gray-600 body-font">
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-10 h-10 text-white p-2 bg-primary rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+          </svg>
+          <span class="ml-3 text-xl">Tailblocks</span>
+        </a>
+        <nav
+          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer" onclick="redirectToHome()">Home</a>
+          <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer" onclick="renderPlanner()">Planner</a>
+          <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer">Recommender</a>
+          <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer">Help</a>
+        </nav>
+        <button
+          class="mr-1 inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-secondary rounded-lg text-base mt-4 md:mt-0"
+          onclick="redirect()"
+        >
+          Sign In
+        </button>
+        <!-- <button
+          class="inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-600 rounded-lg text-base mt-4 md:mt-0"
+          onclick="redirect()"
+        >
+          Sign Up
+        </button> -->
+      </div>
+    </header>
+    <section class="text-gray-600 h-[640px] bg-[url('../static/hero-bg.png')] bg-cover bg-center">
+      <div
+        class="container h-full mx-auto flex px-5 py-24 items-center justify-center flex-col"
+        >
+        <!-- <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"> -->
+        <div class="text-center lg:w-2/3 w-full">
+          <h1
+            class="title-font sm:text-9xl text-4xl mb-4 font-medium text-primary font-hero"
+          >
+            TRIPMATE
+          </h1>
+          <p class="mb-8 leading-relaxed text-2xl sm:text-3xl font-subheading font-semibold text-slate-500">
+            Your smart AI trip planner.
+          </p>
+          <!-- <div class="flex justify-center">
+            <button
+              class="inline-flex text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary rounded text-lg"
+            >
+              Try Now!!
+            </button>
+            <button
+              class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+            >
+              Button
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <section>
+      
+    </section>
+    <script>
+      function redirect() {
+        window.location.href = "/auth/signup";
+      }
+      function renderPlanner() {
+        event.preventDefault();
+        window.location.href = "/planner";
+      }
+      function redirectToHome() {
+        event.preventDefault();
+        window.location.href = "/";
+      }
+    </script>
+  </body>
+</html>

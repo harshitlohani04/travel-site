@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="utf-8" />
+    <title>AI Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+</head>
+<body>
+    <header class="text-gray-600 body-font bg-navbar">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10 text-white p-2 bg-primary rounded-full"
+                viewBox="0 0 24 24"
+            >
+                <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                ></path>
+            </svg>
+            <span class="ml-3 text-xl">Tailblocks</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading" onclick="redirectToHome()">Home</a>
+                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading" onclick="renderPlanner()">Planner</a>
+                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading">Recommender</a>
+                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading">Help</a>
+            </nav>
+            <button
+            class="mr-1 inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-secondary rounded-lg text-base mt-4 md:mt-0"
+                    onclick="redirect()">
+                Sign In
+            </button>
+        </div>
+    </header>
+    <section>
+        <div class="flex h-[640px] w-full">
+            <!-- hero section left pane -->
+            <div class="flex flex-col justify-center w-1/2 items-center">
+                <div class="absolute w-96 h-96 bg-accent rounded-full z-0 opacity-15 top-[10rem] left-[5rem] blur-3xl"></div>
+                <p class="font-semibold text-black">PLAN YOUR PERFECT TRIP WITH YOUR PERSONAL AI-POWERED</p>
+                <h1 class=" items-center sm:text-6xl text-4xl mb-10 font-bold text-primary font-subheading">ITINERARY PLANNER</h1>
+                <p class="mb-8 leading-relaxed text-wrap mx-auto px-20 items-center font-sans text-black font-bold">
+                    Tell us where you're headed, who's coming along, and what you love — whether it's art, food, adventure,
+                     or relaxation. Our AI-powered itinerary planner uses advanced language models to craft a personalized 
+                     travel plan just for you. No more generic suggestions — just smart, tailored trips that match your 
+                     interests and pace.
+                </p>
+                <div class="flex">
+                    <button class="inline-flex text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary rounded text-lg">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+            <!-- hero section right pane (image/animation)-->
+            <div class="flex justify-center items-center w-1/2">
+                <dotlottie-player
+                src="https://lottie.host/e6b9d71a-32db-4787-9a22-10efd2e98207/xb5Xee8JaO.lottie"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+                class="w-[350px] h-[350px] justify-center">
+                </dotlottie-player>
+            </div>
+             
+        </div>
+    </section>
+    <script
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module">
+    </script>
+    <script src="../static/utils.js"></script>
+</body>
+</html>
