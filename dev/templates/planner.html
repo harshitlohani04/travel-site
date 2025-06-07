@@ -1,88 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <head>
-    <meta charset="utf-8" />
-    <title>AI Planner</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../static/output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <meta charset="utf-8" />
+      <title>AI Planner</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="../static/output.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+      />
+      <script src="../static/redirectFunction.js"></script>
+    </head>
   </head>
-</head>
-<body>
+  <body>
     <header class="text-gray-600 body-font bg-navbar">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10 text-white p-2 bg-primary rounded-full"
-                viewBox="0 0 24 24"
-            >
-                <path
-                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                ></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
-            </a>
-            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading" onclick="redirectToHome()">Home</a>
-                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading" onclick="renderPlanner()">Planner</a>
-                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading">Recommender</a>
-                <a href = "#" class="mr-5 hover:text-primary hover:cursor-pointer font-subheading">Help</a>
-            </nav>
-            <button
-            class="mr-1 inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-secondary rounded-lg text-base mt-4 md:mt-0"
-                    onclick="redirect()">
-                Sign In
-            </button>
-        </div>
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-10 h-10 text-white p-2 bg-primary rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+          </svg>
+          <span class="ml-3 text-xl">Tailblocks</span>
+        </a>
+        <nav
+          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+        >
+          <a
+            href="#"
+            class="mr-5 hover:text-primary hover:cursor-pointer"
+            onclick="redirectToHome()"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="mr-5 hover:text-primary hover:cursor-pointer"
+            onclick="renderPlanner()"
+            >Planner</a
+          >
+          <a
+            href="#"
+            class="mr-5 hover:text-primary hover:cursor-pointer"
+            >Recommender</a
+          >
+          <a
+            href="#"
+            class="mr-5 hover:text-primary hover:cursor-pointer"
+            >Help</a
+          >
+        </nav>
+        <button
+          class="mr-1 inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-secondary rounded-lg text-base mt-4 md:mt-0"
+          id = "signInButton"
+        >
+          Sign In
+        </button>
+      </div>
     </header>
     <section>
-        <div class="flex h-[640px] w-full">
-            <!-- hero section left pane -->
-            <div class="flex flex-col justify-center w-1/2 items-center">
-                <div class="absolute w-96 h-96 bg-accent rounded-full z-0 opacity-15 top-[10rem] left-[5rem] blur-3xl"></div>
-                <p class="font-semibold text-black">PLAN YOUR PERFECT TRIP WITH YOUR PERSONAL AI-POWERED</p>
-                <h1 class=" items-center sm:text-6xl text-4xl mb-10 font-bold text-primary font-subheading">ITINERARY PLANNER</h1>
-                <p class="mb-8 leading-relaxed text-wrap mx-auto px-20 items-center font-sans text-black font-bold">
-                    Tell us where you're headed, who's coming along, and what you love — whether it's art, food, adventure,
-                     or relaxation. Our AI-powered itinerary planner uses advanced language models to craft a personalized 
-                     travel plan just for you. No more generic suggestions — just smart, tailored trips that match your 
-                     interests and pace.
-                </p>
-                <div class="flex">
-                    <button class="inline-flex text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary rounded text-lg">
-                        Get Started
-                    </button>
-                </div>
-            </div>
-            <!-- hero section right pane (image/animation)-->
-            <div class="flex justify-center items-center w-1/2">
-                <dotlottie-player
-                src="https://lottie.host/e6b9d71a-32db-4787-9a22-10efd2e98207/xb5Xee8JaO.lottie"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-                class="w-[350px] h-[350px] justify-center">
-                </dotlottie-player>
-            </div>
-             
+      <div class="flex h-[640px] w-full flex-col md:flex-row">
+        <!-- hero section left pane -->
+        <div class="flex flex-col justify-center w-full md:w-1/2 items-center px-4 md:px-0">
+          <div
+            class="absolute w-72 md:w-96 h-72 md:h-96 bg-accent rounded-full z-0 opacity-15 top-[10rem] left-[2rem] md:left-[5rem] blur-3xl"
+          ></div>
+          <p class="font-semibold text-black text-center">
+            PLAN YOUR PERFECT TRIP WITH YOUR PERSONAL AI-POWERED
+          </p>
+          <h1
+            class="items-center text-3xl sm:text-4xl md:text-6xl mb-6 md:mb-10 font-bold text-primary font-subheading text-center"
+          >
+            ITINERARY PLANNER
+          </h1>
+          <p
+            class="mb-8 text-sm sm:text-base md:text-lg leading-relaxed text-wrap mx-auto px-6 md:px-20 items-center font-sans text-black font-bold text-center"
+          >
+            Tell us where you're headed, who's coming along, and what you love —
+            whether it's art, food, adventure, or relaxation. Our AI-powered
+            itinerary planner uses advanced language models to craft a
+            personalized travel plan just for you. No more generic suggestions —
+            just smart, tailored trips that match your interests and pace.
+          </p>
+          <div class="flex">
+            <button
+              class="inline-flex text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary rounded text-lg"
+            >
+              Get Started
+            </button>
+          </div>
         </div>
+        <!-- hero section right pane (image/animation)-->
+        <div class="flex justify-center items-center w-full md:w-1/2 mt-8 md:mt-0">
+          <dotlottie-player
+            src="https://lottie.host/e6b9d71a-32db-4787-9a22-10efd2e98207/xb5Xee8JaO.lottie"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            class="w-[350px] h-[350px] justify-center"
+          >
+          </dotlottie-player>
+        </div>
+      </div>
+    </section>
+    <hr class="w-[25%] border-dotted bg-primary mx-auto">
+    <section class="my-10 md:my-20">
+      <div class="container flex w-full relative overflow-hidden flex-col md:flex-row">
+        <!-- SVG as background -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute inset-0 w-full h-full pointer-events-none z-0 blur"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#CB0404"
+            fill-opacity="1"
+            d="M0,128L7.3,138.7C14.5,149,29,171,44,165.3C58.2,160,73,128,87,117.3C101.8,107,116,117,131,106.7C145.5,96,160,64,175,85.3C189.1,107,204,181,218,208C232.7,235,247,213,262,208C276.4,203,291,213,305,186.7C320,160,335,96,349,96C363.6,96,378,160,393,165.3C407.3,171,422,117,436,117.3C450.9,117,465,171,480,176C494.5,181,509,139,524,138.7C538.2,139,553,181,567,176C581.8,171,596,117,611,85.3C625.5,53,640,43,655,48C669.1,53,684,75,698,122.7C712.7,171,727,245,742,234.7C756.4,224,771,128,785,101.3C800,75,815,117,829,144C843.6,171,858,181,873,181.3C887.3,181,902,171,916,149.3C930.9,128,945,96,960,101.3C974.5,107,989,149,1004,144C1018.2,139,1033,85,1047,58.7C1061.8,32,1076,32,1091,32C1105.5,32,1120,32,1135,58.7C1149.1,85,1164,139,1178,160C1192.7,181,1207,171,1222,186.7C1236.4,203,1251,245,1265,250.7C1280,256,1295,224,1309,186.7C1323.6,149,1338,107,1353,122.7C1367.3,139,1382,213,1396,234.7C1410.9,256,1425,224,1433,208L1440,192L1440,320L1432.7,320C1425.5,320,1411,320,1396,320C1381.8,320,1367,320,1353,320C1338.2,320,1324,320,1309,320C1294.5,320,1280,320,1265,320C1250.9,320,1236,320,1222,320C1207.3,320,1193,320,1178,320C1163.6,320,1149,320,1135,320C1120,320,1105,320,1091,320C1076.4,320,1062,320,1047,320C1032.7,320,1018,320,1004,320C989.1,320,975,320,960,320C945.5,320,931,320,916,320C901.8,320,887,320,873,320C858.2,320,844,320,829,320C814.5,320,800,320,785,320C770.9,320,756,320,742,320C727.3,320,713,320,698,320C683.6,320,669,320,655,320C640,320,625,320,611,320C596.4,320,582,320,567,320C552.7,320,538,320,524,320C509.1,320,495,320,480,320C465.5,320,451,320,436,320C421.8,320,407,320,393,320C378.2,320,364,320,349,320C334.5,320,320,320,305,320C290.9,320,276,320,262,320C247.3,320,233,320,218,320C203.6,320,189,320,175,320C160,320,145,320,131,320C116.4,320,102,320,87,320C72.7,320,58,320,44,320C29.1,320,15,320,7,320L0,320Z"
+          ></path>
+        </svg>
+        <!-- form section -->
+        <div class="flex items-center justify-center w-full md:w-1/2 z-10 relative px-4 md:px-0">
+          <!-- The main form container -->
+          <div
+            class="bg-white p-6 md:p-8 m-2 md:m-4 w-full max-w-md rounded-3xl border-2 border-gray-300 z-10"
+          >
+            <form action="/planner" method="POST" class="z-20">
+              <div class="relative mb-4">
+                <h2
+                  class="flex text-2xl font-bold text-gray-900 mb-4 justify-center"
+                >
+                  Fill out this form
+                </h2>
+                <p
+                  class="my-6 text-sm text-gray-500 flex justify-center font-semibold"
+                >
+                  Get your personalized itinerary in just a few clicks!
+                </p>
+                <div class="relative mb-4">
+                  <label
+                    for="location"
+                    class="leading-4 text-sm text-gray-900 font-bold"
+                    >Location(s)</label
+                  >
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div class="relative mb-4">
+                  <label
+                    for="days"
+                    class="leading-4 text-sm text-gray-900 font-bold"
+                    >Number of Days</label
+                  >
+                  <input
+                    type="integer"
+                    id="days"
+                    name="days"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div class="relative mb-4">
+                  <label
+                    for="preferences"
+                    class="leading-4 text-sm text-gray-900 font-bold"
+                    >Preferences</label
+                  >
+                  <input
+                    type="text"
+                    id="preferences"
+                    name="preferences"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div class="relative mb-4">
+                  <label
+                    for="travelmode"
+                    class="leading-4 text-sm text-gray-900 font-bold"
+                    >Mode of travel</label
+                  >
+                  <input
+                    type="text"
+                    id="travelmode"
+                    name="travelmode"
+                    class="w-full bg-white rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-secondary transition delay-200 duration-300 ease-in-out rounded-lg text-base font-semibold mt-2 w-full"
+                  onclick="renderPlan()"
+                >
+                  Get the Plan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="flex w-full md:w-1/2 justify-center relative mt-8 md:mt-0">
+            <div
+            class="absolute w-56 md:w-72 h-56 md:h-72 bg-accent rounded-full z-0 opacity-30 top-[2rem] md:top-[5rem] left-[5rem] md:left-[12.5rem] blur-3xl"
+          ></div>
+          <div class="flex justify-center items-center">
+            <dotlottie-player
+              src="https://lottie.host/e3d3c3fb-fe96-4fbd-beb7-016871e4b38e/JD6FziwA5F.lottie"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+              class="w-[300px] md:w-[600px] h-[300px] md:h-[600px]"
+            ></dotlottie-player>
+          </div>
+        </div>
+      </div>
     </section>
     <script
-        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-        type="module">
-    </script>
-    <script src="../static/utils.js"></script>
-</body>
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
 </html>
