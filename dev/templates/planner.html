@@ -6,6 +6,7 @@
       <title>AI Planner</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="../static/output.css" />
+      <link rel="stylesheet" href="../static/animation.css" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -128,12 +129,94 @@
       </div>
     </section>
     <hr class="w-[25%] border-dotted bg-primary mx-auto">
+    <section class="w-full bg-primary">
+        <div class="w-10/12 h-full mx-auto my-10 md:my-20 justify-center items-center py-10 relative">
+            <div
+            class="absolute w-250 md:w-96 h-full md:h-96 bg-accent z-0 opacity-35 top-[5rem] left-[2rem] md:left-[5rem] blur-3xl"
+          ></div>
+          <div
+            class="absolute w-250 md:w-96 h-full md:h-96 bg-accent z-0 opacity-20 top-[20rem] left-[2rem] md:left-[5rem] blur-3xl"
+          ></div>
+          <div
+            class="absolute w-250 md:w-96 h-full md:h-96 bg-accent z-0 opacity-30 top-[30rem] left-[2rem] md:left-[5rem] blur-3xl"
+          ></div>
+          <div
+            class="absolute w-250 md:w-96 h-full md:h-96 bg-accent z-0 opacity-30 top-[47rem] left-[2rem] md:left-[5rem] blur-3xl"
+          ></div>
+            <div class="heading flex justify-center">
+                <h2 class="text-5xl font-subheading font-bold text-white mb-10">How it works?</h2>
+            </div>
+            <div>
+                <div class="flex w-full">
+                    <div class="flex w-1/2 justify-center">
+                        <!-- <img class = "h-[75px] w-[75px]" src="../static/location.png" alt="Location pin"> -->
+                        <dotlottie-player
+                            src="https://lottie.host/591516f7-08ee-48f5-b165-270bf43423bb/rquhAVljih.lottie"
+                            background="transparent"
+                            speed="0.75"
+                            style="width: 250px; height: 250px"
+                            loop
+                            autoplay
+                        ></dotlottie-player>
+                    </div>
+                    <div class="card flex items-center justify-center flex-col w-1/2">
+                        <h3 class="font-subheading font-bold text-3xl text-white">Tell us where you are going</h3>
+                        <p class="font-subheading text-2x1 text-white">Start by selecting where you are going</p>
+                    </div>
+                </div>
+                <div class="flex w-full">
+                    <div class="flex w-1/2 justify-center">
+                        <!-- <img class = "h-[75px] w-[75px]" src="../static/location.png" alt="Location pin"> -->
+                        <dotlottie-player
+                            src="https://lottie.host/e0f19749-64f4-422a-ae47-9c69de0157d3/7JVmzrZSma.lottie"
+                            background="transparent"
+                            speed="1"
+                            style="width: 250px; height: 250px"
+                            loop
+                            autoplay
+                        ></dotlottie-player>
+                    </div>
+                    <div class="card flex items-center justify-center flex-col w-1/2">
+                        <h3 class="font-subheading font-bold text-3xl text-white">Share your preferences</h3>
+                        <p class="font-subheading text-2x1 text-white">Whether you're into art, food, nature, or nightlife — we tailor your trip to match.</p>
+                    </div>
+                </div>
+                <div class="flex w-full">
+                    <div class="flex w-1/2 justify-center">
+                        <!-- <img class = "h-[75px] w-[75px]" src="../static/location.png" alt="Location pin"> -->
+                        <div class="buffering-container">
+                            <div class="buffering-spinner"></div>
+                            <div class="buffering-text">AI</div>
+                        </div>
+                    </div>
+                    <div class="card flex items-center justify-center flex-col w-1/2">
+                        <h3 class="font-subheading font-bold text-3xl text-white">Sit Back & Relax</h3>
+                        <p class="font-subheading text-2x1 text-white">Our AI planner designs a smart itinerary based on your choices.</p>
+                    </div>
+                </div>
+                <div class="flex w-full">
+                    <div class="flex w-1/2 justify-center">
+                        <!-- <img class = "h-[75px] w-[75px]" src="../static/location.png" alt="Location pin"> -->
+                        <div class="buffering-container">
+                            <div class="buffering-spinner"></div>
+                            <div class="buffering-text">AI</div>
+                        </div>
+                    </div>
+                    <div class="card flex items-center justify-center flex-col w-1/2">
+                        <h3 class="font-subheading font-bold text-3xl text-white">Get your custom Itinerary</h3>
+                        <p class="font-subheading text-2x1 text-white">Review, download, and share your tailor-made itinerary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="w-[25%] border-dotted bg-primary mx-auto">
     <section class="my-10 md:my-20">
       <div class="container flex w-full relative overflow-hidden flex-col md:flex-row">
         <!-- SVG as background -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="absolute inset-0 w-full h-full pointer-events-none z-0 blur"
+          class="absolute inset-0 w-full h-full pointer-events-none z-0"
           viewBox="0 0 1440 320"
         >
           <path
@@ -162,14 +245,14 @@
                 </p>
                 <div class="relative mb-4">
                   <label
-                    for="location"
+                    for="locations"
                     class="leading-4 text-sm text-gray-900 font-bold"
                     >Location(s)</label
                   >
                   <input
                     type="text"
-                    id="location"
-                    name="location"
+                    id="locations"
+                    name="locations"
                     class="w-full bg-white rounded border border-gray-300 focus:border-accent focus:ring-1 focus:ring-accent text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
