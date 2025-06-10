@@ -6,8 +6,41 @@
     <title>Authentication</title>
     <link rel="stylesheet" href="../static/output.css" />
     <link rel="stylesheet" href="../static/function.css" />
+    <script src="../static/redirectFunction.js" defer></script>
   </head>
   <body>
+    <header class="text-gray-600 body-font bg-navbar">
+        <div class="container mx-auto flex flex-wrap p-4 md:p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10 text-white p-2 bg-primary rounded-full"
+                viewBox="0 0 24 24"
+            >
+                <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                ></path>
+            </svg>
+            <span class="ml-3 text-xl">Tailblocks</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center space-x-2 md:space-x-5">
+                <a href = "#" class="hover:text-primary hover:cursor-pointer" onclick="redirectToHome()">Home</a>
+                <a href = "#" class="hover:text-primary hover:cursor-pointer" onclick="renderPlanner()">Planner</a>
+                <a href = "#" class="hover:text-primary hover:cursor-pointer" id="recommenderLink">Recommender</a>
+                <a href = "#" class="hover:text-primary hover:cursor-pointer">Help</a>
+            </nav>
+            <button
+            class="mr-1 inline-flex items-center text-white transition ease-in-out delay-75 duration-700 bg-primary border-0 py-1 px-3 focus:outline-none hover:bg-secondary rounded-lg text-sm md:text-base mt-4 md:mt-0"
+                    onclick="redirect()">
+                Sign In
+            </button>
+        </div>
+    </header>
     <div class="flex w-full flex-col md:flex-row">
       <!-- form section -->
       <div class="hidden items-center justify-center w-full md:w-1/2 min-h-screen signup p-4">
