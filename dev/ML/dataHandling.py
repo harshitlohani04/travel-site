@@ -21,6 +21,9 @@ def basic_preprocessing(df):
     df['Nearest Landmark'] = df['Nearest Landmark'].fillna('Unknown')  # Fill with constant value
     df.drop(columns=["Distance to Landmark", 'Tax'], inplace=True)
 
+    # Changing the datatype of the Price column to int
+    df['Price'] = pd.to_numeric(df['Price'], errors='coerce').fillna(0).astype(int)
+
     return df
 
 def data_push_to_supabase(data):
