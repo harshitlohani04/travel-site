@@ -1,0 +1,38 @@
+/* Buffering Symbol with AI in the center - Red Theme (#CB0404) */
+.buffering-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0px auto;
+}
+
+.buffering-spinner {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: 8px solid #e0baba; /* lighter tinted red for background */
+  border-top: 8px solid #CB0404; /* your main red color */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.buffering-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fff;
+  user-select: none;
+}
+
+/* Keyframes for rotating spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
