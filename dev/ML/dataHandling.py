@@ -26,16 +26,16 @@ def basic_preprocessing(df):
 
     return df
 
-def data_push_to_supabase(data):
+def data_push_to_supabase(data, city):
     try:
         data_processed = basic_preprocessing(data)
         data_processed = data_processed.to_dict(orient='records')
-        response = supabase_client.table("hotels_delhi").insert(data_processed).execute()
-
-        return response
+        supabase_client.table(f"hotels_{city}").insert(data_processed).execute()
     except Exception as exception:
-        return exception
+        print(f"Exception occured by the name of {exception}")
 
 if __name__ == "__main__":
-    response = data_push_to_supabase(df)
-    print(response)
+    cities = ['mumbai', 'bangalore', 'chennai', 'kolkata', 'hyderabad']
+    for city in cities:
+        df = pd.read_csv(f"dev/ML/data/{city}.csv")
+        data_push_to_supabase(df, city)
